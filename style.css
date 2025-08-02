@@ -215,3 +215,125 @@ h1 {
     padding: 8px 14px;
   }
 }
+:root {
+  --accent: #0d6efd;
+  --background: #fff;
+  --primary: #181818;
+  --link-bg: #f3f3f3;
+  --modal-backdrop: rgba(0,0,0,0.19);
+}
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background: var(--background);
+  color: var(--primary);
+}
+.header {
+  width: 100vw;
+  position: fixed;
+  top: 0; left: 0;
+  padding: 24px 40px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background);
+  z-index: 200;
+}
+.header .name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  user-select: none;
+}
+.header .socials {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .socials a,
+.header .socials button {
+  background: none;
+  border: none;
+  color: var(--accent);
+  padding: 4px;
+  cursor: pointer;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 600;
+}
+.header .socials .desktop-only {
+  display: flex;
+}
+#menu-toggle {
+  display: none;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 700px) {
+  .header {
+    padding: 16px 12px 0 12px;
+  }
+  .header .socials .desktop-only {
+    display: none;
+  }
+  #menu-toggle {
+    display: flex;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100vw; height: 100vh;
+  background: var(--modal-backdrop);
+  align-items: center;
+  justify-content: center;
+}
+.modal.open {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  padding: 2em 1.5em 1.5em 1.5em;
+  border-radius: 1.2em;
+  min-width: 220px;
+  min-height: 130px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  position: relative;
+  animation: fadeIn .2s;
+}
+@keyframes fadeIn { from { opacity:0; transform: scale(0.94);} to { opacity:1; transform: scale(1);} }
+.modal-content button#close-modal {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+.modal-content a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  padding: 10px 0;
+  transition: background .15s, color .15s;
+  text-align: center;
+}
+.modal-content a:hover {
+  background: var(--link-bg);
+  color: var(--primary);
+}
