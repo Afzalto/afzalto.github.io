@@ -1,3 +1,17 @@
+<script>
+const menuToggle = document.getElementById('menu-toggle');
+const menuModal = document.getElementById('menu-modal');
+const closeModal = document.getElementById('close-modal');
+
+menuToggle.addEventListener('click', () => menuModal.classList.add('open'));
+closeModal.addEventListener('click', () => menuModal.classList.remove('open'));
+menuModal.addEventListener('click', (e) => {
+  if (e.target === menuModal) menuModal.classList.remove('open');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') menuModal.classList.remove('open');
+});
+</script>
 <body>
 <div class="header">
   <span class="name">Afzalto</span>
