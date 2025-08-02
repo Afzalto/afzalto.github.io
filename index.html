@@ -1,22 +1,35 @@
 <body>
-  <!-- Top header -->
-  <div class="header">
-    <span class="name">Afzalto</span>
-    <div class="socials">
-      <a href="https://t.me/afzalto" class="telegram" target="_blank" aria-label="Telegram">
-        <!-- Telegram SVG icon -->
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor"><path d="M9.993 16.534l-.398 4.784c.57 0 .823-.244 1.13-.538l2.708-2.582 5.617 4.114c1.03.567 1.76.27 2.013-.956l3.649-17.12c.332-1.539-.573-2.142-1.564-1.772l-21.359 8.239c-1.462.567-1.444 1.376-.254 1.747l5.46 1.705 12.656-7.994c.596-.379 1.14-.17.693.209z"/></svg>
-      </a>
-      <button id="menu-toggle" aria-label="Show all links">
-        <!-- Hamburger SVG -->
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="6" x2="21" y2="6"/>
-          <line x1="3" y1="12" x2="21" y2="12"/>
-          <line x1="3" y1="18" x2="21" y2="18"/>
-        </svg>
-      </button>
-    </div>
+<div class="header">
+  <span class="name">Afzalto</span>
+  <div class="socials">
+    <!-- Always visible Telegram link -->
+    <a href="https://t.me/afzalto" class="telegram" target="_blank" aria-label="Telegram">
+      <!-- Telegram SVG icon -->
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M9.993 16.534l-.398 4.784c.57 0 .823-.244 1.13-.538l2.708-2.582 5.617 4.114c1.03.567 1.76.27 2.013-.956l3.649-17.12c.332-1.539-.573-2.142-1.564-1.772l-21.359 8.239c-1.462.567-1.444 1.376-.254 1.747l5.46 1.705 12.656-7.994c.596-.379 1.14-.17.693.209z"/></svg>
+    </a>
+    <!-- Menu button (only on mobile) -->
+    <button id="menu-toggle" aria-label="Show menu">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+    <!-- Other socials, desktop only -->
+    <a href="https://twitter.com/afzalto" class="desktop-only" target="_blank">Twitter</a>
+    <a href="mailto:your@email.com" class="desktop-only">Email</a>
   </div>
+</div>
+
+<!-- Modal for mobile menu -->
+<div id="menu-modal" class="modal">
+  <div class="modal-content">
+    <button id="close-modal" aria-label="Close menu">&times;</button>
+    <a href="https://t.me/afzalto" target="_blank">Telegram</a>
+    <a href="https://twitter.com/afzalto" target="_blank">Twitter</a>
+    <a href="mailto:your@email.com">Email</a>
+  </div>
+</div>
 
   <!-- Modal for all links -->
   <div id="menu-modal" class="modal">
